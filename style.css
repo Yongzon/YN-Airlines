@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #0a2342;
+  background-color: #f8f9fc;
+  line-height: 1.6;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  color: #f5f5f5;
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #10385f
+}
+
+.homes {
+  background: url('images/plane1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: left;
+  padding: 180px 145px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.homes h1 {
+  font-size: 55px;
+  line-height: 65px;
+  margin-bottom: 15px;
+}
+
+.homes p {
+  font-size: 20px;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.homes button{
+  width: 150px;
+  height: 55px;
+  border-radius: 5px;
+  background-color: #003366;
+  color: white;
+  font-weight: 600;
+  border: none;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s;
+}
+
+.homes button:hover{
+  background-color:  #1a6bbd;
+}
+
+.destinations {
+  padding: 80px 60px;
+  text-align: center;
+}
+.destinations h2 {
+  margin-bottom: 40px;
+  color: #003366;
+}
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  gap: 25px;
+}
+.dest-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.dest-card:hover {
+  transform: translateY(-5px);
+}
+.dest-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.dest-card .info {
+  padding: 15px;
+}
+.dest-card p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  padding: 80px 60px;
+  background: #eef3fb;
+  text-align: center;
+}
+.services h2 {
+  margin-bottom: 40px;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.service-card img {
+  width: 100%;
+  border-radius: 12px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* ===== CLIENTS ===== */
+.clients {
+  padding: 80px 60px;
+  text-align: center;
+}
+.clients img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 25px;
+}
+
+/* ===== BLOG ===== */
+.blog {
+  padding: 80px 60px;
+  background: #f5f7fb;
+  text-align: center;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.blog-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0a2342;
+  color: white;
+  padding: 40px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+footer h4 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+footer a:hover {
+  color: white;
+}
+
+.hidden{
+  display: none;
+}
+
+.booking-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.booking-content form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 660px;
+  padding: 50px 60px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.booking-content h2{
+  text-align: center;
+  font-size: 30px;
+}
+
+.booking-content input,
+.booking-content select {
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(212, 206, 206, 0.747);
+  border-radius: 3px;
+}
+
+.booking-content input:hover,
+.booking-content select:hover{
+  border-color:  #1a6bbd;
+}
+
+.booking-content label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.booking-content div{
+  margin-top: 15px;
+}
+
+.booking-content button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #003366;
+  color: white;
+  font-weight: 600;
+  border: none;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s;
+}
+
+.booking-content button:hover{
+  background-color: #1a6bbd;
+}
+
+
