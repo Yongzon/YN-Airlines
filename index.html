@@ -8,23 +8,23 @@
 </head>
 <body>
 
+    <!-- HEADER -->
   <header id="navbar">
     <h2>Y&N AIRLINES</h2>
     <nav>
       <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a id="bookinglink" href="#booking">BOOKING</a></li>
-        <li><a href="#">FLIGHTS</a></li>
-        <li><a href="#">PASSENGER</a></li>
-        <li><a href="#">SUMMARY</a></li>
+        <li><a href="#" id="homeLink">HOME</a></li>
+        <li><a href="#booking" id="bookinglink">BOOKING</a></li>
+        <li><a href="#flights">FLIGHTS</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- HOME SECTION -->
   <section id="home" class="homes">
     <div class="home-content">
       <h1>TAKE OFF WITH CONFIDENCE</h1>
-      <p>Book your flight with ease and enjoy premium travel experiences around the world.</p> 
+      <p>Book your flight with ease and enjoy premium travel experiences around the world.</p>
       <button id="bookFlightBtn">BOOK A FLIGHT</button>
     </div>
   </section>
@@ -124,16 +124,15 @@
     </div>
   </footer>
 
-    <!-- Booking Form Section -->
   <section id="booking" class="hidden">
     <div class="booking-content">
       <form id="bookingForm">
         <h2>Book Your Flight</h2>
         <label>From:</label>
-        <input type="text" id="from" required>
+        <input type="text" id="from" placeholder="e.g., manila" required>
 
         <label>To:</label>
-        <input type="text" id="to" required>
+        <input type="text" id="to" placeholder="e.g., cebu" required>
 
         <label>Flight Type:</label>
         <select id="flightType" required>
@@ -141,21 +140,72 @@
           <option value="oneway">One Way</option>
         </select>
 
-        <div id="dateFields">
+        <div class="departDateField">
           <label>Depart Date:</label>
           <input type="date" id="departDate" required>
+        </div>
 
-          <div id="returnDateField">
-            <label>Return Date:</label>
-            <input type="date" id="returnDate">
-          </div>
+        <div id="returnDateField">
+          <label>Return Date:</label>
+          <input type="date" id="returnDate">
         </div>
 
         <label>Passengers:</label>
-        <input type="number" id="passengers" min="1" required>
+        <input type="number" id="passengers" min="1" max="10" required>
 
-        <button type="submit">Search Flight</button>
+        <div class="buttons">
+        <button type="button" id="backToHome" class="back-btns">Back to Home</button>
+        <button type="submit" class="submit-btns">Search Flight</button>
+        </div>
       </form>
+    </div>
+  </section>
+
+  <section id="flights" class="hidden">
+    <div class="flight-content">
+      <form class="flightform">
+      <h2>Available Flights</h2>
+      <div id="flightList" class="flight-list">
+      </div>
+
+      <div class="promo-section">
+        <input type="text" id="promoCode" placeholder="Enter Promo Code" />
+        <button type="button" id="applyPromo">Apply Promo</button>
+      </div>
+
+      <button type="button" id="backToBooking" class="back-btn">Back to Booking</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="passenger" class="hidden">
+    <div class="passenger-content">
+      <form id="passengerForm" class="passengerForms">
+        <h2>Passenger Information</h2>
+
+        <div id="passengerFields"></div>
+
+        <div class="pass-btn">
+          <button type="button" id="backToFlights" class="back-btn">Back to Flights</button>
+          <button type="button" id="doneBtn" class="done-btn">Done</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="summary" class="hidden">
+    <div class="summary-content">
+      <form class="summaryform">
+        <h2>Booking Summary</h2>
+        <div id="summaryDetails">
+
+        </div>
+      </form>
+
+      <div class="summarybtn">
+        <button type="button" id="backToPassenger" class="back-btn">Back to Passenger Details</button>
+        <button type="button" id="bookNowBtn">Book Now</button>
+      </div>
     </div>
   </section>
 
