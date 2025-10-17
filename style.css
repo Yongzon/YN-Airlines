@@ -99,6 +99,50 @@ nav a:hover {
   background-color:  #1a6bbd;
 }
 
+.whychoose {
+  background: #0a2342;
+  color: white;
+  text-align: center;
+  padding: 80px 60px;
+}
+
+.whychoose h2 {
+  margin-bottom: 50px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.why-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.why-card{
+  width: 300px;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.why-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #ffd700;
+}
+
+.why-card p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #e0e0e0;
+}
+
+.why-card i{
+  font-size: 20px;
+}
+
 .destinations {
   padding: 80px 60px;
   text-align: center;
@@ -170,28 +214,6 @@ nav a:hover {
   width: 100%;
   border-radius: 12px;
   margin-top: 25px;
-}
-
-.blog {
-  padding: 80px 60px;
-  background: #f5f7fb;
-  text-align: center;
-}
-
-.blog h2{
-  margin-bottom: 15px;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-.blog-card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 footer {

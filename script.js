@@ -1,11 +1,8 @@
-// ===== VARIABLES =====
 let selectedFlight = null;
 let promoUsed = false;
 let passengerCount = 1;
 
-// ===== FLIGHT DATA ARRAY =====
 const flightData = [
-  // Round Trip Flights
   {
     flightNo: "5J560",
     from: "cebu",
@@ -51,7 +48,7 @@ const flightData = [
     fareType: "Standard Fare",
     terminal: "Terminal 3"
   },
-  // One Way Flights
+  
   {
     flightNo: "5J562",
     from: "cebu",
@@ -99,9 +96,8 @@ const flightData = [
   }
 ];
 
-// ===== SHOW/HIDE FUNCTIONS =====
 function hideAllSections() {
-  const sections = ["navbar", "home", "destination", "service", "client", "blog", "contact", "booking", "flights", "passenger", "summary"];
+  const sections = ["navbar", "home", "whychoose","destination", "service", "client", "contact", "booking", "flights", "passenger", "summary"];
   for (let i = 0; i < sections.length; i++) {
     const el = document.getElementById(sections[i]);
     if (el) el.style.display = "none";
@@ -132,27 +128,24 @@ function showHome() {
   hideAllSections();
   document.getElementById("navbar").style.display = "block";
   document.getElementById("home").style.display = "block";
+  document.getElementById("whychoose").style.display = "block";
   document.getElementById("destination").style.display = "block";
   document.getElementById("service").style.display = "block";
   document.getElementById("client").style.display = "block";
-  document.getElementById("blog").style.display = "block";
   document.getElementById("contact").style.display = "block";
 }
 
-// ===== NAVIGATION =====
 document.getElementById("bookFlightBtn").addEventListener("click", showBookingForm);
 document.getElementById("bookinglink").addEventListener("click", function(event) {
   event.preventDefault();
   showBookingForm();
 });
 
-// ===== FLIGHT TYPE TOGGLE =====
 document.getElementById("flightType").onchange = function() {
   const returnDate = document.getElementById("returnDateField");
   returnDate.style.display = this.value === "roundtrip" ? "block" : "none";
 };
 
-// ===== AUTO-GENERATE PASSENGER FIELDS =====
 document.getElementById("passengers").addEventListener("input", function () {
   const container = document.getElementById("passengerFields");
   container.innerHTML = "";
@@ -175,7 +168,6 @@ document.getElementById("passengers").addEventListener("input", function () {
   }
 });
 
-// ===== VALIDATION FUNCTIONS =====
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -215,7 +207,6 @@ function validatePassengerForm() {
   return true;
 }
 
-// ===== SEARCH FLIGHT =====
 document.getElementById("bookingForm").onsubmit = function(event) {
   event.preventDefault();
 
@@ -251,7 +242,6 @@ document.getElementById("bookingForm").onsubmit = function(event) {
   showFlightsSection();
 };
 
-// ===== DISPLAY FLIGHTS =====
 function displayFlights(flights) {
   const flightList = document.getElementById("flightList");
   flightList.innerHTML = "";
@@ -294,7 +284,7 @@ function displayFlights(flights) {
       const flightNo = flightCard.getAttribute("data-flightno");
       selectedFlight = flightData.find(function(flight) { return flight.flightNo === flightNo; });
       if (promoUsed) {
-        selectedFlight.fareType = "Promo Fare";  // Fix: Update fareType if promo was used
+        selectedFlight.fareType = "Promo Fare";
       }
       showPassengerForm();
     };
@@ -303,7 +293,6 @@ function displayFlights(flights) {
   document.querySelector(".promo-section").style.display = "block";
 }
 
-// ===== APPLY PROMO =====
 document.getElementById("applyPromo").onclick = function() {
   if (promoUsed) {
     alert("Promo already used.");
@@ -326,13 +315,11 @@ document.getElementById("applyPromo").onclick = function() {
   }
 };
 
-// ===== BACK BUTTONS =====
 document.getElementById("backToHome").onclick = showHome;
 document.getElementById("backToBooking").onclick = showBookingForm;
 document.getElementById("backToFlights").onclick = showFlightsSection;
 document.getElementById("backToPassenger").onclick = showPassengerForm;
 
-// ===== DONE BUTTON (Passenger to Summary) =====
 document.getElementById("doneBtn").onclick = function() {
   if (!selectedFlight) {
     alert("Please select a flight first.");
@@ -376,7 +363,6 @@ document.getElementById("doneBtn").onclick = function() {
   showSummarySection();
 };
 
-// ===== BOOK NOW =====
 document.getElementById("bookNowBtn").onclick = function() {
   const confirmationNumber = "YN" + Math.random().toString(36).substr(2, 8).toUpperCase();
   
@@ -388,7 +374,6 @@ document.getElementById("bookNowBtn").onclick = function() {
   showHome();
 };
 
-// ===== INITIALIZE DATE INPUTS =====
 document.addEventListener('DOMContentLoaded', function() {
   const today = new Date().toISOString().split('T')[0];
   document.getElementById('departDate').min = today;
